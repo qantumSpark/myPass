@@ -42,7 +42,6 @@ export function attachCopy(selector, idx) {
       copyStringToClipboard(e.target.childNodes[idx].getAttribute('data-pass'))
     })
   });
-  
 }
 
 //Attache un clique event pour delete un item
@@ -66,7 +65,7 @@ function copyStringToClipboard (str) {
   el.value = str;
   // Set non-editable to avoid focus and move outside of view
   el.setAttribute('readonly', '');
-  el.style = {displa: 'none'};
+  el.style = {display: 'none'};
   document.body.appendChild(el);
   // Select text inside element
   el.select();
