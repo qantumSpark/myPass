@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  <link rel="stylesheet" href="./css/style.css">
+  <title>myPass</title>
+  
+</head>
+<body>
+
+  <main id="App" class="App">
+
+    <header class="app__header">
+      <div class="title">
+        <img src="./css/lock-icon.svg"></img>
+        <h1>my<span>P</span>ass</h1>
+      </div>
+
+      <form>
+        <label for="title">Website:</label>
+        <input type="text" name="title" id="titleInput" value="www.">
+
+        <label for="username">Username:</label>
+        <input type="text" name="username" id="usernameInput">
+
+        <label for="password">Password:</label>
+        <div class="password">
+          <input type="text" name="password" id="passwordInput" >
+          <div id="generateBtn"><p>Generate</p></div>
+        </div>
+        <button id="formBtn" class="app__form-btn">ADD</button>
+      </form>
+    </header>
+
+    <div class="app__list-container" id="appListContainer">
+      <ul class="app__list">
+        
+      </ul>
+    </div>
+
+  </main>
+
+
+  <script src="./main.js" type="module"></script>
+</body>
+</html>
