@@ -25,10 +25,10 @@ export function onClick(targetSelector, cb) {
 
 //Render le Dom apres avoir recupéré les datas
 export function updateDom(rootSelector){
-  let data = api.getAll()
-  if (data === null) return
   let root = document.querySelector(rootSelector)
   root.innerHTML = ''
+  let data = api.getAll()
+  if (data === null) return
   data.forEach(el => root.appendChild(buildListItem(el)))
   attachCopy(".app__list-item", 2)
   attachDelete(".app__list-item__cross", 3)
@@ -49,9 +49,10 @@ function attachDelete(selector, idx) {
   let items = document.querySelectorAll(selector)
   items.forEach(item => {
     item.addEventListener('click', e => {
+      e.stopPropagation()
       api.deleteOne(e.target.parentElement.childNodes[0].innerText.slice(9));
-      dom.updateDom(".app__list")
-      
+      updateDom(".app__list")
+     
     })
   })
 }
